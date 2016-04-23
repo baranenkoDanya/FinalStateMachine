@@ -1,0 +1,5 @@
+C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\Lab2\obj\Debug\Lab2.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\Lab2\bin\Debug\Lab2.exe
+C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\Lab2\bin\Debug\Lab2.pdb
+C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\Lab2\obj\Debug\Lab2.exe
+C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\Lab2\obj\Debug\Lab2.pdb
