@@ -106,6 +106,15 @@ namespace Lab2
             if ("{}[]()".Contains(code[Index].ToString())) 
                 tokens += "(5," + code[Index++].ToString() + ")";
         }
+
+        private void EndOfStatementMachine()
+        {
+            if (code[Index].ToString() == ";")
+            {
+                tokens += "(6)";
+                Index++;
+            }
+        }
         
         private void IdentifiersMachine()
         {
@@ -133,7 +142,7 @@ namespace Lab2
             if (Array.IndexOf(keywords, varuable) != -1)
             {
                 int key_index = Array.IndexOf(keywords, varuable);
-                Tokens += "(" + (key_index + 6) + ")";
+                Tokens += "(" + (key_index + 7) + ")";
                 Index += keywords[key_index].Length;
                 return;
             }    
@@ -187,6 +196,10 @@ namespace Lab2
             ConstantsTable = new List<string>();
             while (Index < code.Length)
             {
+                if (code[Index] == ';')
+                {
+                    EndOfStatementMachine();
+                }
                 if ("=*/+-".Contains(code[Index]))
                 {
                     OperationsMachine();
@@ -215,7 +228,7 @@ namespace Lab2
                 {
                     ConstantsMachine();
                 }
-                else if ("\r\n\t ;".Contains(code[Index]))
+                else if ("\r\n\t ".Contains(code[Index]))
                 {
                     Index++;
                 }

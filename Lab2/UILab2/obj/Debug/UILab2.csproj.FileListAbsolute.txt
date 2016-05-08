@@ -8,3 +8,13 @@ C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\UILa
 C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\UILab2\obj\Debug\UILab2.csproj.GenerateResource.Cache
 C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\UILab2\obj\Debug\UILab2.exe
 C:\Users\Daniel\Desktop\СЕМЕСТР 2, КУРС 2\КПЗ\Лаба 2\Lab2\UILab2\obj\Debug\UILab2.pdb
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.exe
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.pdb
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\bin\Debug\UILab2.exe
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\bin\Debug\UILab2.pdb
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\bin\Debug\Lab2.exe
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\bin\Debug\Lab2.pdb
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.Form1.resources
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.Properties.Resources.resources
+C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.csproj.GenerateResource.Cache

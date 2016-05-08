@@ -46,7 +46,7 @@ b = i * 200.342 + 1033.2e2;
             Form info = new Form();
             Label temp = new Label();
             temp.Text = 
-                "variable - 1\nconstant - 2\noperations - 3\ncomparison - 4\nbraces - 5\nfor - 6\nif - 7\nwhile - 8\nforeach - 9";
+                "variable - 1\nconstant - 2\noperations - 3\ncomparison - 4\nbraces - 5\nend of statement - 6\nfor - 7\nif - 8\nwhile - 9\nforeach - 10";
             info.Controls.Add(temp);
             info.StartPosition = FormStartPosition.CenterScreen;
             info.BackColor = Color.FromArgb(136, 255, 155);

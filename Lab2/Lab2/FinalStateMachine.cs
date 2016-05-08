@@ -138,10 +138,10 @@ namespace Lab2
             {
                 res += "№: " + i + ", Constant: " + ConstantTable[i] + "\n";
             }
-            //foreach (var VARIABLE in res)
-            //{
-            //    Console.Write(VARIABLE.ToString());
-            //}
+            foreach (var VARIABLE in res)
+            {
+                Console.Write(VARIABLE.ToString());
+            }
             return res;
         }
 
