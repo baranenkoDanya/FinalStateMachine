@@ -17,7 +17,7 @@ namespace UILab2
 
             string test1 = @"for (i = 1; i < 10; i = i + 1) 
 { 
-_break_fast98 = 14.332e+123 >= 134; 
+_break_fast98 = 14.332e+123 / 134; 
 AcceptButton[i + 1] = 123.5*i;
 }";
             string test2 = @"while(i<10/2)

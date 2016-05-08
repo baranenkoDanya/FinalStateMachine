@@ -39,14 +39,6 @@ namespace Lab2
                 ResultLexeme += "(8)";
             }
         }
-
-        private void ForeachMachine(string input)
-        {
-            if (input == "foreach")
-            {
-                ResultLexeme += "9";
-            }
-        }
         
         private void OperationsMachine(string input)
         {
@@ -124,10 +116,6 @@ namespace Lab2
             {
                 res += "№: " + i + ", Identifier: " + IdentificateTable[i] + "\n";
             }
-            //foreach (var VARIABLE in res)
-            //{
-            //    Console.Write(VARIABLE.ToString());
-            //}
             return res;
         }
 
@@ -157,7 +145,6 @@ namespace Lab2
                 ComparisonsMachine(temp[i]);
                 ConstantMachine(temp[i]);
                 ForMachine(temp[i]);
-                ForeachMachine(temp[i]);
                 IfMachine(temp[i]);
                 OperationsMachine(temp[i]);
                 VariableMachine(temp[i]);

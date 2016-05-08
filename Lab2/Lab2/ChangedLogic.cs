@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace Lab2
         private List<string> identifiersTable;
         private List<string> constantsTable;
         private string tokens;
-        private string[] keywords = {"for", "if", "while", "foreach"};
+        private string[] keywords = {"for", "while", "if"};
         private bool isInValidVariable = false;
         private bool isInvalidConstant = false;
 
@@ -217,7 +218,7 @@ namespace Lab2
                     IdentifiersMachine();
                     if (isInValidVariable)
                     {
-                        MessageBox.Show("ERROR:::invalid syntax at position " + Index);
+                        MessageBox.Show("ERROR ::: lexical error at position " + Index);
                         IdentifiersTable.Clear();
                         ConstantsTable.Clear();
                         Tokens = "";
@@ -234,7 +235,7 @@ namespace Lab2
                 }
                 else
                 {
-                    MessageBox.Show("ERROR:::invalid syntax at position " + Index);
+                    MessageBox.Show("ERROR ::: lexical error at position " + Index);
                     IdentifiersTable.Clear();
                     ConstantsTable.Clear();
                     Tokens = "";
@@ -242,6 +243,122 @@ namespace Lab2
                 }
             }
             return Tokens;
+        }
+
+        public bool SyntaxAnalyzer(String tokensString)
+        {
+            if (tokensString == "")
+                return false;
+
+            List<String> stack = new List<String>() { "CODE", "$" }; // $ - a symbol of the end of the file
+            String[] buffer = tokensString.Split(new String[] { ")(" }, StringSplitOptions.None);
+            for (int i = 1; i < buffer.Length; i++)
+            {
+                buffer[i] = "(" + buffer[i];
+            }
+            List<String> tokens = new List<String>(buffer);
+            tokens.Add("$");
+
+            List<String> nonterminals = new List<String>() {
+                "CODE", "STATEMENT", "BARE", "BARE1", "OBJECT", "COMPLEX", "IDENTIFIER", "INDEX", "FOR_STATEMENT", "BOOL_EXP",
+                "WHILE_STATEMENT", "FOREACH_STATEMENT", "IF_STATEMENT"
+            };
+
+            List<String> terminals = new List<String>() {
+                "(1", "(2", "(3,=", "(3", "(4", "(5,(", "(5,)", "(5,[", "(5,]", "(5,{", "(5,}", "(6", "(7", "(8", "(9", "$"
+            };
+
+            List<String>[ , ] table = new List<String>[nonterminals.Count, terminals.Count];
+
+            /* CODE   =>   STATEMENT   CODE    |   E
+               STATEMENT   =>   BARE   |   COMPLEX
+               BARE   =>   IDENTIFIER    =    OBJECT   BARE’   ; 
+               BARE’    =>   operation  OBJECT   BARE’   |   E
+               OBJECT   =>   constant   |   IDENTIFIER     
+               COMPLEX   =>   FOR_STATEMENT   |   WHILE_STATEMENT   |   FOREACH_STATEMENT   |   IF_STATEMENT
+               IDENTIFIER   =>   varuable   INDEX
+               INDEX   =>   [   OBJECT   BARE’   ] 
+               FOR_STATEMENT   =>   for   (   BARE ?   ;   BOOL_EXP ?   ;   BARE ?   )   {   CODE   }
+               WHILE_STATEMENT   =>   while   (   BOOL_EXP ?   )   {   CODE   }
+               IF_STATEMENT   =>   if   (   BOOL_EXP ?   )   {   CODE   }
+               BOOL_EXP   =>   OBJECT   BARE’   comparison   OBJECT   BARE’          */
+
+            table[0, 0] = new List<String>() { "STATEMENT", "CODE" };
+            table[0, 12] = table[0, 0];
+            table[0, 13] = table[0, 0];
+            table[0, 14] = table[0, 0];
+            table[1, 0] = new List<String>() { "BARE", "(6" };
+            table[1, 12] = new List<String>() { "COMPLEX" };
+            table[1, 13] = table[1, 12];
+            table[1, 14] = table[1, 12];
+            table[2, 0] = new List<String>() { "IDENTIFIER", "(3,=", "OBJECT", "BARE1" };
+            table[3, 3] = new List<String>() { "(3", "OBJECT", "BARE1" };
+            table[4, 0] = new List<String>() { "IDENTIFIER" };
+            table[4, 1] = new List<String>() { "(2" };
+            table[5, 12] = new List<String>() { "FOR_STATEMENT" };
+            table[5, 13] = new List<String>() { "WHILE_STATEMENT" };
+            table[5, 14] = new List<String>() { "IF_STATEMENT" };
+            table[6, 0] = new List<String>() { "(1", "INDEX" };
+            table[7, 7] = new List<String>() { "(5,[", "OBJECT", "BARE1", "(5,]" };
+            table[8, 12] = new List<String>() { "(7", "(5,(", "BARE", "(6", "BOOL_EXP", "(6", "BARE", "(5,)", "(5,{", "CODE", "(5,}" };
+            table[9, 0] = new List<String>() { "OBJECT", "BARE1", "(4", "OBJECT", "BARE1" };
+            table[10, 13] = new List<String>() { "(8", "(5,(", "BOOL_EXP", "(5,)", "(5,{", "CODE", "(5,}" };
+            table[11, 14] = new List<String>() { "(9", "(5,(", "BOOL_EXP", "(5,)", "(5,{", "CODE", "(5,}" };
+
+            List<String> emptyStrings = new List<String>() { "CODE", "BARE1", "INDEX" };
+
+            while (!tokens[0].StartsWith(stack[0]) || stack.Count != 1 || tokens.Count != 1)
+            {
+                if (tokens[0].StartsWith(stack[0]) || tokens[0] == stack[0])
+                {
+                    tokens.RemoveAt(0);
+                    stack.RemoveAt(0);
+                    continue;
+                }
+                else if (nonterminals.IndexOf(stack[0]) == -1)
+                {
+                    return false;
+                }
+                String nonterminal = stack[0];
+                stack.RemoveAt(0);
+                int terminalIndex = -1;
+                for (int i = 0; i < terminals.Count; i++)
+                {
+                    if (tokens[0].StartsWith(terminals[i]))
+                    {
+                        terminalIndex = i;
+                        break;
+                    }
+                }
+                List<String> follow = table[nonterminals.IndexOf(nonterminal), terminalIndex];
+                if (follow == null)
+                {
+                    if (!emptyStrings.Contains(nonterminal))
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    follow = follow.ToList();
+                    follow.AddRange(stack);
+                    stack = follow.ToList();
+                }
+
+                //display the stack and tokens after each step
+                System.Console.WriteLine("\nStack:");
+                foreach (String s in stack)
+                {
+                    System.Console.Write(s + ", ");
+                }
+                System.Console.WriteLine("\n\nTokens:");
+                foreach (String s in tokens)
+                {
+                    System.Console.Write(s + ", ");
+                }
+                System.Console.WriteLine();
+            }
+            return true;
         }
 
         public static void tMain(string[] args)
