@@ -11,8 +11,11 @@ namespace UILab2
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         private string stack;
         private string token;
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +35,7 @@ b = i * 200.342 + 1033.2e2;
 
         private void Convert_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Lab2.program temp = new Lab2.program();
             //var lexemeText = temp.LexicalAnalyzer(textBox1.Text);
             lexeme.Text = temp.Launch(textBox1.Text);
@@ -48,12 +52,29 @@ b = i * 200.342 + 1033.2e2;
                 BackColor = Color.FromArgb(0, 70, 102);
             }
         }
+=======
+            //Lab2.FinalStateMachine temp = new Lab2.FinalStateMachine();
+            
+            Lab2.program temp = new Lab2.program();
+            lexeme.Text = temp.LexicalAnalyzer(textBox1.Text);
+            Identificate.Text = "Identificators: \n" + Lab2.InputHandler.ShowStringArray(temp.IdentifiersTable.ToArray());
+            Constant.Text = "Constants: \n" + Lab2.InputHandler.ShowStringArray(temp.ConstantsTable.ToArray());
+            //lexeme.Text = temp.ToLexeme(textBox1.Text.ToString());
+            //Identificate.Text = "Identificators: \n" + temp.ShowIdentificateTable();
+            //Constant.Text = "Constants: \n" + temp.ShowConstantTable();
+        }
+
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
         private void button1_Click(object sender, EventArgs e)
         {
             Form info = new Form();
             Label temp = new Label();
             temp.Text = 
+<<<<<<< HEAD
                 "variable - 1\nconstant - 2\noperations - 3\ncomparison - 4\nbraces - 5\nend of statement - 6\nfor - 7\nif - 8\nwhile - 9";
+=======
+                "variable - 1\nconstant - 2\noperations - 3\ncomparison - 4\nbraces - 5\nend of statement - 6\nfor - 7\nif - 8\nwhile - 9\nforeach - 10";
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
             info.Controls.Add(temp);
             info.StartPosition = FormStartPosition.CenterScreen;
             info.BackColor = Color.FromArgb(136, 255, 155);
@@ -69,6 +90,7 @@ b = i * 200.342 + 1033.2e2;
         {
             textBox1.Text = comboBox1.Text.ToString();
         }
+<<<<<<< HEAD
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -77,5 +99,7 @@ b = i * 200.342 + 1033.2e2;
             info.label4.Text += this.token;
             info.Show();
         }
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
     }
 }

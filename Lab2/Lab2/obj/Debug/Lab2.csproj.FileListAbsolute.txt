@@ -8,8 +8,11 @@ C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\Lab2\obj\Debug\Lab2.pdb
 C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\Lab2\bin\Debug\Lab2.exe
 C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\Lab2\bin\Debug\Lab2.pdb
 C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\Lab2\obj\Debug\Lab2.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 H:\Downloads\FinalStateMachine-master\Lab2\Lab2\bin\Debug\Lab2.exe
 H:\Downloads\FinalStateMachine-master\Lab2\Lab2\bin\Debug\Lab2.pdb
 H:\Downloads\FinalStateMachine-master\Lab2\Lab2\obj\Debug\Lab2.csprojResolveAssemblyReference.cache
 H:\Downloads\FinalStateMachine-master\Lab2\Lab2\obj\Debug\Lab2.exe
 H:\Downloads\FinalStateMachine-master\Lab2\Lab2\obj\Debug\Lab2.pdb
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f

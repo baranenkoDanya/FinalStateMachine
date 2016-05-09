@@ -19,9 +19,12 @@ namespace Lab2
         private bool isInValidVariable = false;
         private bool isInvalidConstant = false;
 
+<<<<<<< HEAD
         public string StackState;
         public string TokenState;
 
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
         public int Index
         {
             set { index = value; }
@@ -278,9 +281,15 @@ namespace Lab2
                BARE   =>   IDENTIFIER    =    OBJECT   BARE’   ; 
                BARE’    =>   operation  OBJECT   BARE’   |   E
                OBJECT   =>   constant   |   IDENTIFIER     
+<<<<<<< HEAD
                COMPLEX   =>   FOR_STATEMENT   |   WHILE_STATEMENT   |   IF_STATEMENT
                IDENTIFIER   =>   varuable   INDEX
                INDEX   =>   [   OBJECT   BARE’  |   E   ] 
+=======
+               COMPLEX   =>   FOR_STATEMENT   |   WHILE_STATEMENT   |   FOREACH_STATEMENT   |   IF_STATEMENT
+               IDENTIFIER   =>   varuable   INDEX
+               INDEX   =>   [   OBJECT   BARE’   ] 
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
                FOR_STATEMENT   =>   for   (   BARE ?   ;   BOOL_EXP ?   ;   BARE ?   )   {   CODE   }
                WHILE_STATEMENT   =>   while   (   BOOL_EXP ?   )   {   CODE   }
                IF_STATEMENT   =>   if   (   BOOL_EXP ?   )   {   CODE   }
@@ -349,6 +358,7 @@ namespace Lab2
                 }
 
                 //display the stack and tokens after each step
+<<<<<<< HEAD
                 foreach (String s in stack)
                 {
                     this.StackState += s + ", ";
@@ -359,10 +369,24 @@ namespace Lab2
                     this.Tokens += s + ", ";
                 }
                 this.Tokens += "\n\n\n";
+=======
+                System.Console.WriteLine("\nStack:");
+                foreach (String s in stack)
+                {
+                    System.Console.Write(s + ", ");
+                }
+                System.Console.WriteLine("\n\nTokens:");
+                foreach (String s in tokens)
+                {
+                    System.Console.Write(s + ", ");
+                }
+                System.Console.WriteLine();
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
             }
             return true;
         }
 
+<<<<<<< HEAD
         public string Launch(string input)
         {
             var tempText = this.LexicalAnalyzer(input);
@@ -377,6 +401,8 @@ namespace Lab2
             return "Token string is NOT VALID";
         }
 
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
         public static void tMain(string[] args)
         {
             program p = new program();

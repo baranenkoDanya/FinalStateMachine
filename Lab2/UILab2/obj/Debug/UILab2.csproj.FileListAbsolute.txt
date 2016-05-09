@@ -18,6 +18,7 @@ C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.
 C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.Form1.resources
 C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.Properties.Resources.resources
 C:\Users\admin\Documents\KPZ-Syntax_Analyzer\Lab_3\Lab2\UILab2\obj\Debug\UILab2.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 H:\Downloads\FinalStateMachine-master\Lab2\UILab2\obj\Debug\UILab2.exe
 H:\Downloads\FinalStateMachine-master\Lab2\UILab2\obj\Debug\UILab2.pdb
 H:\Downloads\FinalStateMachine-master\Lab2\UILab2\bin\Debug\UILab2.exe
@@ -29,3 +30,5 @@ H:\Downloads\FinalStateMachine-master\Lab2\UILab2\obj\Debug\UILab2.Form1.resourc
 H:\Downloads\FinalStateMachine-master\Lab2\UILab2\obj\Debug\UILab2.Properties.Resources.resources
 H:\Downloads\FinalStateMachine-master\Lab2\UILab2\obj\Debug\UILab2.csproj.GenerateResource.Cache
 H:\Downloads\FinalStateMachine-master\Lab2\UILab2\obj\Debug\UILab2.Stacks.resources
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f

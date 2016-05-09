@@ -52,12 +52,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Stacks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stacks.Designer.cs">
       <DependentUpon>Stacks.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,9 +73,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="Stacks.resx">
       <DependentUpon>Stacks.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 963657a4fc2ddb92699bb478f7d48243d86f9d2f
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
