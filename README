@@ -1,0 +1,7 @@
+This application should model work of the lexical and syntax analyzer. It
+gets a piece of code written in C# and if the code contains any error the 
+information about it is displayed on the screen(line, position, lexical or
+syntax error) and the program is ready to get a new piece of code. Otherwise
+it shows OK message.
+
+The syntax analyzer should be built with an enumertive method.
